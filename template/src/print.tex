@@ -1,0 +1,8 @@
+% 2-up imposition of ../output/main.pdf onto landscape A4 at 100% scale.
+% Build main.pdf first, then print.pdf with "actual size".
+\documentclass{article}
+\usepackage[a4paper, landscape]{geometry}
+\usepackage{pdfpages}
+\begin{document}
+\includepdf[pages=-, nup=2x1, delta=10mm 0mm, noautoscale]{../output/main.pdf}
+\end{document}

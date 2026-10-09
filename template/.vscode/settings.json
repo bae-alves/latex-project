@@ -1,0 +1,69 @@
+{
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.outDir": "%WORKSPACE_FOLDER%/output",
+  "latex-workshop.latex.auxDir": "%WORKSPACE_FOLDER%/build",
+  "latex-workshop.latex.recipe.default": "latexmk (XeLaTeX, Noto Sans)",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk (XeLaTeX, Noto Sans)",
+      "tools": [
+        "latexmk-xelatex"
+      ]
+    },
+    {
+      "name": "Build print.pdf (build main.pdf first)",
+      "tools": [
+        "latexmk-main",
+        "latexmk-print"
+      ]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk-xelatex",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-cd",
+        "-auxdir=%AUXDIR%",
+        "-xelatex",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "latexmk-main",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-cd",
+        "-auxdir=%AUXDIR%",
+        "-xelatex",
+        "-outdir=%OUTDIR%",
+        "%WORKSPACE_FOLDER%/src/main.tex"
+      ]
+    },
+    {
+      "name": "latexmk-print",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-cd",
+        "-auxdir=%AUXDIR%",
+        "-pdf",
+        "-outdir=%OUTDIR%",
+        "%WORKSPACE_FOLDER%/src/print.tex"
+      ]
+    }
+  ],
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.synctex.afterBuild.enabled": true,
+  "latex-workshop.latex.autoClean.run": "onFailed",
+  "cSpell.language": "en"
+}

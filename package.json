@@ -1,0 +1,29 @@
+{
+  "name": "latex-project",
+  "displayName": "Create LaTeX Project",
+  "description": "Scaffold a XeLaTeX + LaTeX Workshop project (src/, build/, output/, .vscode/)",
+  "version": "0.0.1",
+  "publisher": "bae-alves",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bae-alves/latex-project"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "latexProject.create",
+        "title": "Create LaTeX Project"
+      }
+    ]
+  },
+  "files": [
+    "LICENSE",
+    "extension.js",
+    "template/**"
+  ]
+}

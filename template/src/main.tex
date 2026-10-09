@@ -1,0 +1,19 @@
+% Page = half of landscape A4 minus 1cm border and 1cm gap:
+% (297 - 3*10)/2 = 133.5mm wide, 210 - 2*10 = 190mm tall.
+\documentclass[fontsize=9pt,DIV=calc]{scrartcl}
+\usepackage{fontspec}
+\setsansfont[Ligatures=Common]{Noto Sans}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[paperwidth=133.5mm, paperheight=190mm, margin=12mm]{geometry}
+
+\title{{{name}}}
+\author{}
+\date{}
+
+\begin{document}
+
+Hello, world.
+
+New paragraph.
+
+\end{document}
