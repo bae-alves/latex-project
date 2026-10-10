@@ -2,12 +2,12 @@
   "latex-workshop.latex.autoBuild.run": "onSave",
   "latex-workshop.latex.outDir": "%WORKSPACE_FOLDER%/output",
   "latex-workshop.latex.auxDir": "%WORKSPACE_FOLDER%/build",
-  "latex-workshop.latex.recipe.default": "latexmk (XeLaTeX, Noto Sans)",
+  "latex-workshop.latex.recipe.default": "latexmk (LuaLaTeX, Noto)",
   "latex-workshop.latex.recipes": [
     {
-      "name": "latexmk (XeLaTeX, Noto Sans)",
+      "name": "latexmk (LuaLaTeX, Noto)",
       "tools": [
-        "latexmk-xelatex"
+        "latexmk-lualatex"
       ]
     },
     {
@@ -20,7 +20,7 @@
   ],
   "latex-workshop.latex.tools": [
     {
-      "name": "latexmk-xelatex",
+      "name": "latexmk-lualatex",
       "command": "latexmk",
       "args": [
         "-synctex=1",
@@ -28,7 +28,7 @@
         "-file-line-error",
         "-cd",
         "-auxdir=%AUXDIR%",
-        "-xelatex",
+        "-lualatex",
         "-outdir=%OUTDIR%",
         "%DOC%"
       ]
@@ -42,7 +42,7 @@
         "-file-line-error",
         "-cd",
         "-auxdir=%AUXDIR%",
-        "-xelatex",
+        "-lualatex",
         "-outdir=%OUTDIR%",
         "%WORKSPACE_FOLDER%/src/main.tex"
       ]
@@ -65,5 +65,22 @@
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.synctex.afterBuild.enabled": true,
   "latex-workshop.latex.autoClean.run": "onFailed",
-  "cSpell.language": "en"
+  "cSpell.language": "en",
+  "emojisense.languages": {
+    "latex": {
+      "unicodeCompletionsEnabled": true,
+      "markupCompletionsEnabled": false,
+      "emojiDecoratorsEnabled": false
+    },
+    "markdown": true,
+    "plaintext": {
+      "markupCompletionsEnabled": false,
+      "emojiDecoratorsEnabled": false
+    },
+    "scminput": true,
+    "git-commit": true
+  },
+  "[latex]": {
+    "editor.wordWrap": "on"
+  }
 }

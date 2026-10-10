@@ -1,7 +1,7 @@
 {
   "name": "latex-project",
   "displayName": "Create LaTeX Project",
-  "description": "Scaffold a XeLaTeX + LaTeX Workshop project (src/, build/, output/, .vscode/)",
+  "description": "Scaffold a LuaLaTeX + LaTeX Workshop project (src/, build/, output/, .vscode/)",
   "version": "0.0.1",
   "publisher": "bae-alves",
   "license": "CC0-1.0",

@@ -1,9 +1,21 @@
 % Page = half of landscape A4 minus 1cm border and 1cm gap:
 % (297 - 3*10)/2 = 133.5mm wide, 210 - 2*10 = 190mm tall.
-\documentclass[fontsize=9pt,DIV=calc]{scrartcl}
+\documentclass[fontsize=11pt,DIV=calc]{scrartcl}
 \usepackage{fontspec}
-\setsansfont[Ligatures=Common]{Noto Sans}
+% Glyphs missing from Noto Sans (symbols, box drawing, emoji) come from these, in order.
+\directlua{luaotfload.add_fallback("noto", {
+  "Noto Sans Symbols:mode=harf;",
+  "Noto Sans Symbols 2:mode=harf;",
+  "Noto Sans Mono:mode=harf;",
+  "Noto Color Emoji:mode=harf;",
+})}
+\setsansfont{Noto Sans}[Ligatures=Common, RawFeature={fallback=noto}]
+\setmonofont{Noto Sans Mono}[RawFeature={fallback=noto}]
 \renewcommand{\familydefault}{\sfdefault}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setotherlanguage{portuguese}
+\usepackage{tabularx}
 \setlength{\parindent}{0pt}
 \usepackage[paperwidth=133.5mm, paperheight=190mm, margin=12mm]{geometry}
 

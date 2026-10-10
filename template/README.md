@@ -6,23 +6,26 @@ Open this folder in VS Code and install the recommended extensions when prompted
 LaTeX Workshop provides the build button, automatic compilation on save, PDF
 preview in an editor tab, and source/PDF synchronization. LaTeX Utilities adds
 LaTeX editing helpers; LTeX and Code Spell Checker provide writing and spelling
-checks.
+checks. Emojisense turns `:thinking` into 🤔 as you type.
 
 You also need a TeX distribution installed on your system that provides
-`latexmk`, XeLaTeX, and the Noto Sans system font (for example, TeX Live on
+`latexmk`, LuaLaTeX, and the Noto system fonts (for example, TeX Live on
 Linux, MacTeX on macOS, or MiKTeX on Windows). The VS Code extensions do not
 include the LaTeX compiler.
 On Arch Linux, install the components used by this project with:
 
 ```sh
-sudo pacman -S --needed texlive-basic texlive-binextra texlive-latex texlive-latexrecommended texlive-latexextra
+sudo pacman -S --needed texlive-basic texlive-binextra texlive-latex texlive-latexrecommended texlive-latexextra texlive-luatex texlive-langportuguese
 ```
 
-The document uses the system-installed Noto Sans font and builds with XeLaTeX
-by default. On Arch Linux, install the TeX fonts required by KOMA-Script with:
+The document builds with LuaLaTeX (XeLaTeX cannot render color emoji). Text
+uses Noto Sans; glyphs it lacks (symbols, box drawing, emoji) fall back to Noto
+Sans Symbols, Noto Sans Symbols 2, Noto Sans Mono, and Noto Color Emoji.
+Portuguese text goes in `\textportuguese{...}` or a `portuguese` environment.
+On Arch Linux, install the TeX fonts required by KOMA-Script with:
 
 ```sh
-sudo pacman -S --needed texlive-fontsrecommended noto-fonts
+sudo pacman -S --needed texlive-fontsrecommended noto-fonts noto-fonts-emoji
 ```
 
 LaTeX sources live in `src/`, PDFs and their SyncTeX sidecars in `output/`, and
